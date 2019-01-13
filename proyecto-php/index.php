@@ -80,7 +80,7 @@
             </div>
         </aside>
         <!-- CAJA PRINCIPAL -->
-        <div id="main">
+        <div id="main-box">
             <h1>Ultimas entradas</h1>
             <article class="article">
                 <h2>Titulo de mi entrada</h2>
