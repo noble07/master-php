@@ -23,6 +23,20 @@ body{
     background: url('../img/cubes.png') #F4F4F4;
 }
 
+.alerta{
+    padding: 5px;
+    font-size: 14px;
+    color: white;
+    background: green;
+    box-shadow: 0px 1px 3px #CCC;
+    margin-bottom: 15px;
+    border-radius: 2px;
+}
+
+.alerta-error{
+    background: red;
+}
+
 /*CABECERA*/
 #header{
     width: 85%;
