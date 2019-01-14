@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Blog de Videojuegos</title>
+    <link rel="stylesheet" href="./assets/css/style.css" type="text/css">
 </head>
 <body>
     <!-- CABECERA -->
@@ -17,7 +18,7 @@
         </div>
 
         <!-- MENU -->
-        <nav id="nav">
+        <nav id="menu">
             <ul>
                 <li>
                     <a href="index.php">Inicio</a>
@@ -42,6 +43,7 @@
                 </li>
             </ul>
         </nav>
+        <div class="clearfix"></div>
     </header>
 
     <div id="container">
@@ -83,26 +85,38 @@
         <div id="main-box">
             <h1>Ultimas entradas</h1>
             <article class="article">
-                <h2>Titulo de mi entrada</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                <a href="">
+                    <h2>Titulo de mi entrada</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                </a>
             </article>
 
             <article class="article">
-                <h2>Titulo de mi entrada</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                <a href="">
+                    <h2>Titulo de mi entrada</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                </a>
             </article>
 
             <article class="article">
-                <h2>Titulo de mi entrada</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                <a href="">
+                    <h2>Titulo de mi entrada</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                </a>
             </article>
 
             <article class="article">
-                <h2>Titulo de mi entrada</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                <a href="">
+                    <h2>Titulo de mi entrada</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur doloremque, odit iste eum a dignissimos assumenda modi alias officiis amet ipsum unde animi commodi placeat quasi quo quis quisquam ratione.</p>
+                </a>
             </article>
+            <div id="ver-todas">
+                <a href="">Ver todas las entradas</a>
+            </div>
         </div>
-    </div>
+        <div class="clearfix"></div>
+    </div><!--FIN PRINCIPAL-->
 
     <!-- PIE DE PAGINA -->
     <footer id="footer">
