@@ -13,8 +13,8 @@
         //Recoger los valores del formulario de registro
         $nombre = !empty($_POST['nombre']) ? mysqli_real_escape_string($db, $_POST['nombre']) : false;
         $apellidos = !empty($_POST['apellidos']) ? mysqli_real_escape_string($db, $_POST['apellidos']) : false;
-        $email = !empty($_POST['email']) ? mysqli_real_escape_string($db, $_POST['email']) : false;
-        $password =  !empty($_POST['password']) ? mysqli_real_escape_string($db, $_POST['password']) : false;
+        $email = !empty($_POST['email']) ? mysqli_real_escape_string($db, trim($_POST['email'])) : false;
+        $password =  !empty($_POST['password']) ? mysqli_real_escape_string($db, trim($_POST['password'])) : false;
 
         // Array de errores
         $errores = array();
@@ -52,7 +52,6 @@
             $password_validate = false;
             $errores['password'] = 'La contraseña está vacia';
         }
-
         $guardar_usuario = false;
         if(count($errores) == 0){
             $guardar_usuario = true;
