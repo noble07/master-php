@@ -7,7 +7,7 @@
             <!--BOTONES-->
             <a href="create-entries.php" class="botton botton-green">Crear entradas</a>
             <a href="create-category.php" class="botton">Crear categoria</a>
-            <a href="logout.php" class="botton botton-orange">Mis datos</a>
+            <a href="my-data.php" class="botton botton-orange">Mis datos</a>
             <a href="logout.php" class="botton botton-red">Cerrar sesión</a>
         </div>
     <?php endif; ?>
@@ -40,7 +40,9 @@
                     <?= $_SESSION['completado']; ?>
                 </div>
             <?php elseif(isset($_SESSION['errores']['general'])): ?>
-                <?= $_SESSION['errores']['general']; ?>
+                <div class="alerta alerta-error">
+                    <?= $_SESSION['errores']['general']; ?>
+                </div>
             <?php endif; ?>
             <form action="register.php" method="POST">
                 <label for="nombre">Nombre</label>
