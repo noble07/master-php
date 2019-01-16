@@ -11,13 +11,26 @@
     function borrarErrores(){
         $borrado = false;
         if(isset($_SESSION['errores'])){
-            $_SESSION['errores'] = null;
-            $borrado = session_unset();
+            unset($_SESSION['errores']);
+            $borrado = true;
         }
         if (isset($_SESSION['completado'])) {
-            $_SESSION['completado'] = null;
-            $borrado = session_unset();
+            unset($_SESSION['completado']);
+            $borrado = true;
         }
+        if (isset($_SESSION['error_login'])) {
+            unset($_SESSION['error_login']);
+            $borrado = true;
+        }
+        if (isset($_SESSION['errores_entrada'])) {
+            unset($_SESSION['errores_entrada']);
+            $borrado = true;
+        }
+        if (isset($_SESSION['errores_categoria'])) {
+            unset($_SESSION['errores_categoria']);
+            $borrado = true;
+        }
+        
         return $borrado;
     }
 
