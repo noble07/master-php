@@ -13,7 +13,7 @@
         <h1>Editar entrada</h1>
         <p>Edita tu entrada <?= $entrada_actual['titulo']; ?></p>
         <br>
-        <form action="save-entries.php" method="post">
+        <form action="save-entries.php?edit=<?= $entrada_actual['id']; ?>" method="post">
             <label for="titulo">Titulo:</label>
             <input type="text" name="titulo" value="<?= $entrada_actual['titulo']; ?>">
             <?= isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'titulo') : ''; ?>
@@ -28,7 +28,9 @@
                     if(!empty($categorias)):
                     while($categoria = mysqli_fetch_assoc($categorias)):
                 ?>
-                    <option value="<?= $categoria['id']; ?>"><?= $categoria['nombre'] ?></option>
+                    <option value="<?= $categoria['id']; ?>" <?= ($categoria['id'] == $entrada_actual['categoria_id']) ? 'selected = "selected"' : '' ?>>
+                        <?= $categoria['nombre'] ?>
+                    </option>
                 <?php
                     endwhile;
                     endif;
