@@ -1,8 +1,7 @@
 <h1>Bienvenido a mi web con MVC</h1>
 
 <?php
-require_once 'controllers/usuario.php';
-require_once 'controllers/nota.php';
+require_once 'autoload.php';
 
 if ($_GET['controller']) {
     $nombre_controlador = $_GET['controller'].'Controller';
@@ -17,7 +16,6 @@ if (class_exists($nombre_controlador)) {
     if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
         $action = $_GET['action'];
         $controlador->$action();
-    
     }else{
         echo "La pagina que buscas no existe";
     }
