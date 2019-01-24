@@ -15,7 +15,6 @@ CREATE TABLE usuarios(
 CREATE TABLE notas(
     id int(255) AUTO_INCREMENT NOT NULL,
     usuario_id int(255) NOT NULL,
-    categoria_id int(255) NOT NULL,
     titulo varchar(255) NOT NULL,
     descripcion MEDIUMTEXT,
     fecha date NOT NULL,
