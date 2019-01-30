@@ -22,7 +22,7 @@ class Producto{
     }
 
     public function setId($id){
-        $this->id = $id;
+        $this->id = $this->db->real_escape_string($id);
     }
 
     public function getCategoria_id(){
@@ -30,7 +30,7 @@ class Producto{
     }
 
     public function setCategoria_id($categoria_id){
-        $this->categoria_id = $categoria_id;
+        $this->categoria_id = $this->db->real_escape_string($categoria_id);
     }
 
     public function getNombre(){
@@ -38,7 +38,7 @@ class Producto{
     }
 
     public function setNombre($nombre){
-        $this->nombre = $nombre;
+        $this->nombre = $this->db->real_escape_string($nombre);
     }
 
     public function getDescripcion(){
@@ -46,7 +46,7 @@ class Producto{
     }
 
     public function setDescripcion($descripcion){
-        $this->descripcion = $descripcion;
+        $this->descripcion = $this->db->real_escape_string($descripcion);
     }
 
     public function getPrecio(){
@@ -54,7 +54,7 @@ class Producto{
     }
 
     public function setPrecio($precio){
-        $this->precio = $precio;
+        $this->precio = $this->db->real_escape_string($precio);
     }
 
     public function getStock(){
@@ -62,7 +62,7 @@ class Producto{
     }
 
     public function setStock($stock){
-        $this->stock = $stock;
+        $this->stock = $this->db->real_escape_string($stock);
     }
 
     public function getOferta(){
@@ -70,7 +70,7 @@ class Producto{
     }
 
     public function setOferta($oferta){
-        $this->oferta = $oferta;
+        $this->oferta = $this->db->real_escape_string($oferta);
     }
 
     public function getFecha(){
@@ -78,7 +78,7 @@ class Producto{
     }
 
     public function setFecha($fecha){
-        $this->fecha = $fecha;
+        $this->fecha = $this->db->real_escape_string($fecha);
     }
 
     public function getImagen(){
@@ -86,12 +86,24 @@ class Producto{
     }
 
     public function setImagen($imagen){
-        $this->imagen = $imagen;
+        $this->imagen = $this->db->real_escape_string($imagen);
     }
 
     public function getAll(){
         $productos = $this->db->query("SELECT * FROM productos ORDER BY id DESC");
         return $productos;
+    }
+
+    public function save(){
+        $sql = "INSERT INTO productos VALUES(NULL, {$this->getCategoria_id()}, '{$this->getNombre()}', '{$this->getDescripcion()}', {$this->getPrecio()}, {$this->getStock()}, null, CURDATE(), null)";
+        $save = $this->db->query($sql);
+
+        $result = false;
+        if ($save) {
+            $result = true;
+        }
+
+        return $result;
     }
 }
 
