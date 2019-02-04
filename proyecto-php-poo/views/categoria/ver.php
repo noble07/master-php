@@ -1,6 +1,8 @@
-
-                <h1>Algunos de nuestros productos</h1>
-
+                <?php if (isset($cat)): ?>
+                <h1><?= $cat->nombre ?></h1>
+                <?php if($productos->num_rows == 0): ?>
+                <p>No hay productos para mostrar.</p>
+                <?php else: ?>
                 <?php while($product = $productos->fetch_object()): ?>
                 <div class="product">
                     <a href="<?= base_url ?>producto/ver&id=<?= $product->id ?>">
@@ -15,4 +17,7 @@
                     <a href="#" class="button">Comprar</a>
                 </div>
                 <?php endwhile; ?>
-
+                <?php endif; ?>
+                <?php else: ?>
+                <h1>La Categoria no existe</h1>
+                <?php endif; ?>
