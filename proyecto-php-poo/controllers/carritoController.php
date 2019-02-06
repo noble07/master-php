@@ -3,9 +3,9 @@ require_once 'models/producto.php';
 class carritoController{
 
     public function index(){
-        var_dump($_SESSION['carrito']);
+        $carrito = $_SESSION['carrito'];
 
-        echo 'Controlador Carrito, Acción index';
+        require_once 'views/carrito/index.php';
     }
 
     public function add(){
