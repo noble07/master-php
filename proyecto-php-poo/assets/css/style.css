@@ -117,7 +117,7 @@ a:hover{
 table{
     text-align: center;
     width: 100%;
-    border: 1px solid #555;
+    border-bottom: 1px solid #CCC;
 }
 
 td{
@@ -305,6 +305,12 @@ button{
     margin-bottom: 10px;
 }
 
+.img-carrito{
+    height: 80px;
+    display: block;
+    margin: 10px auto;
+}
+
 .product h2{
     font-size: 18px;
     margin-bottom: 10px;
@@ -361,4 +367,22 @@ button{
     color: white;
     background: #222;
     border-top: 5px solid #01B1EA;
+}
+
+/*CARRITO*/
+.total-carrito{
+    width: 295px;
+    float: right;
+}
+
+.total-carrito h3{
+    float: left;
+    display: block;
+    margin-top: 5px;
+}
+
+.button-pedido{
+    display: block;
+    float: right;
+    width: 100px;
 }
