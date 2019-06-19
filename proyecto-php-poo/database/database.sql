@@ -58,6 +58,7 @@ CREATE TABLE lineas_pedidos(
     id int(255) NOT NULL AUTO_INCREMENT,
     pedido_id INT(255) NOT NULL,
     producto_id INT(255) NOT NULL,
+    unidades INT(255) NOT NULL,
     CONSTRAINT pk_linas_pedidos PRIMARY KEY (id),
     CONSTRAINT fk_linea_pedido FOREIGN KEY (pedido_id) REFERENCES pedidos(id),
     CONSTRAINT fk_lineas_producto FOREIGN KEY (producto_id) REFERENCES productos(id)
