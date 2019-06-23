@@ -50,6 +50,26 @@ class Utils{
 
         return $stats;
     }
+
+    public static function showStatus($status){
+        $value = 'Pendiente';
+        switch ($status) {
+            case 'confirm':
+                $value = 'Pendiente';
+                break;
+            case 'preparation':
+                $value = 'En preparación';
+                break;
+            case 'ready':
+                $value = 'Preparado para enviar';
+                break;
+            case 'sended':
+                $value = 'Enviado';
+                break;
+        }
+
+        return $value;
+    }
 }
 
 ?>
