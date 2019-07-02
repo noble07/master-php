@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'role', 'name', 'surname', 'nick', 'email', 'password',
     ];
 
     /**
@@ -29,11 +29,16 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast to native types.
+     * The model's default values for attributes.
      *
      * @var array
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+    protected $attributes = [
+        'role' => 'user',
     ];
+
+    // Relación One To Many / de uno a muchos
+    public function images(){
+        return $this->hasMany('App\Image');
+    }
 }
