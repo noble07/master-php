@@ -1,0 +1,20 @@
+form{
+  img{
+    &.avatar{
+      width: 55px;
+    }
+  }
+}
+
+.navbar{
+  .container-avatar{
+    width: 35px;
+    height: 35px;
+    border-radius: 900px;
+    overflow: hidden;
+    margin-left: 1rem;
+  }
+  img{
+    height: 100%;
+  }
+}
