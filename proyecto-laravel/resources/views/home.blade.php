@@ -14,20 +14,27 @@
                             </div>
                         @endif
                         <div class="data-user">
-                            {{ $image->user->name.' '.$image->user->surname }}
-                            <span class="nickname">{{ ' | @'.$image->user->nick  }}</span>
+                            <a class="text-body" href="{{ route('image.detail', ['id' => $image->id ]) }}">
+                                {{ $image->user->name.' '.$image->user->surname }}
+                                <span class="nickname">{{ ' | @'.$image->user->nick  }}</span>
+                            </a>
                         </div>
                     </div>
                     <div class="card-body">
                         <div class="image-container">
                             <img src="{{ route('image.file', ['filename' => $image->image_path]) }}" alt="">
                         </div>
-                        <div class="likes">
-
-                        </div>
-                        <div class="description p-4">
+                        <div class="description px-4 pt-4">
                             <span class="nickname">{{ '@'.$image->user->nick }}</span>
                             <p>{{ $image->description }}</p>
+                        </div>
+                        <div class="likes pl-4 pr-2 float-left">
+                            <img src="{{ asset('img/black-heart.png') }}" alt="">
+                        </div>
+                        <div class="comments">
+                            <a href="" class="btn btn-sm btn-warning mr-4 mb-4">
+                                Comentarios ({{ count($image->comments) }})
+                            </a>
                         </div>
                     </div>
                 </div>
