@@ -27,7 +27,24 @@
                         <p>{{ $image->description }}</p>
                     </div>
                     <div class="likes pl-4 pr-2 float-left">
-                        <img src="{{ asset('img/black-heart.png') }}" alt="">
+                        {{-- Comprobar si el usuario le dio like a la imagen --}}
+                        @php
+                            $user_like = false;
+                        @endphp
+                        @foreach ($image->likes as $like)
+                            @if ($like->user->id == \Auth::user()->id)
+                                @php
+                                    $user_like = true;
+                                @endphp
+                            @endif
+                        @endforeach
+
+                        @if ($user_like)
+                            <img class="btn-dislike" data-id="{{ $image->id }}" src="{{ asset('img/red-heart.png') }}" alt="">
+                        @else
+                            <img class="btn-like" data-id="{{ $image->id }}" src="{{ asset('img/black-heart.png') }}" alt="">
+                        @endif
+                        <span class="number-likes">{{count($image->likes)}}</span>
                     </div>
                     <div class="clearfix"></div>
                     <div class="comments">
