@@ -26,10 +26,28 @@
                         </div>
                         <div class="description px-4 pt-4">
                             <span class="nickname">{{ '@'.$image->user->nick }}</span>
+                            <span class="nickname date">{{' | '.\FormatTime::LongTimeFilter($image->created_at)}}</span>
                             <p>{{ $image->description }}</p>
                         </div>
                         <div class="likes pl-4 pr-2 float-left">
-                            <img src="{{ asset('img/black-heart.png') }}" alt="">
+                            {{-- Comprobar si el usuario le dio like a la imagen --}}
+                            @php
+                                $user_like = false;
+                            @endphp
+                            @foreach ($image->likes as $like)
+                                @if ($like->user->id == \Auth::user()->id)
+                                    @php
+                                        $user_like = true;
+                                    @endphp
+                                @endif
+                            @endforeach
+
+                            @if ($user_like)
+                                <img class="btn-dislike" src="{{ asset('img/red-heart.png') }}" alt="">
+                            @else
+                                <img class="btn-like" src="{{ asset('img/black-heart.png') }}" alt="">
+                            @endif
+                            <span class="number-likes">{{count($image->likes)}}</span>
                         </div>
                         <div class="comments">
                             <a href="" class="btn btn-sm btn-warning mr-4 mb-4">

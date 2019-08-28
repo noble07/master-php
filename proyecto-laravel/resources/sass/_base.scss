@@ -45,8 +45,22 @@ form{
   }
 }
 
+.image-detail{
+  max-height: 500px;
+}
 .likes{
   img{
     width: 20px;
   }
+}
+
+.pub_image_detail{
+  .comments{
+    padding: 20px;
+  }
+}
+
+.number-likes{
+  color: gray;
+  font-size: 11px;
 }
