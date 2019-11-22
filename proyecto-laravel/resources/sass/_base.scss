@@ -64,3 +64,24 @@ form{
   color: gray;
   font-size: 11px;
 }
+
+.profile-user{
+  height: 200px;
+  margin-bottom: 40px;
+  .container-avatar{
+    width: 200px;
+    height: 200px;
+    border-radius: 900px;
+    overflow: hidden;
+    float: left;
+    img{
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .user-info{
+    padding-left: 30px;
+    float: left;
+    padding-top: 30px;
+  }
+}

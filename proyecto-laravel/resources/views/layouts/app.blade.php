@@ -53,6 +53,9 @@
                                 <a class="nav-link" href="{{ route('home') }}">Inicio</a>
                             </li>
                             <li class="nav-item">
+                                <a class="nav-link" href="{{ route('like.index') }}">Favoritas</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="{{ route('image.create') }}">Subir imagen</a>
                             </li>
                             <li>
@@ -64,7 +67,7 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="">
+                                    <a class="dropdown-item" href="{{ route('profile', ['id' => Auth::user()->id]) }}">
                                         Mi perfil
                                     </a>
 

@@ -1,4 +1,4 @@
-var url = 'http://localhost:8888/master-php/proyecto-laravel/public/'; //Aca va la URL local
+var url = 'http://proyecto-laravel.com.devel'; //Aca va la URL local
 
 window.addEventListener('load', function(){
 
