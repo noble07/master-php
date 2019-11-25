@@ -1,0 +1,37 @@
+<h1>Funciones</h1>
+
+{# Funciones predefinidas #}
+<h3>{{nombre}}</h3>
+<br>
+
+{# Saca el valor minimo de una secuencia o un array de valores #}
+{{ min([9,11,6,99,2]) }}
+<br>
+{# Saca el valor maximo de una secuencia o un array de valores #}
+{{ max([9,11,6,99,2]) }}
+<br>
+{# Saca un valor a azar dependiendo de los parametros que se le envien #}
+{{ random(animales) }}
+<br>
+{# Devuelve una lista con una progresión aritmetica de enteros #}
+{% for i in range(0, 100, 5) %}
+  {{ i }}<br>
+{% endfor %}
+
+<hr>
+
+<h1>Filtros</h1>
+
+{# Devuelve el numero de elementos de una secuancia o mapeo #}
+{{ animales|length }}
+<br>
+
+{% set email = '    juan@juan.com            ' %}
+{# Filtra los espacios en blanco del principio y el final de una cadena | Convierte el valor en mayusculas | Convierte el valor en minusculas #}
+{{ dump(email|trim|upper|lower) }}
+
+<h1>Extensiones personalizadas</h1>
+
+{{ multiplicar(2)|raw }}
+
+{{ 12|multiplicar|raw }}

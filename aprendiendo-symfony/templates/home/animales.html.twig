@@ -1,3 +1,64 @@
-<h1>{{ title }}</h1>
-<h2>Tu nombre es: {{ nombre }}</h2>
-<h3>Tus apellidos son: {{ apellidos }}</h3>
+{# Hereda el template con sus bloques #}
+{% extends 'layouts/master.html.twig' %}
+
+{# Sobrescribe contenido al bloque ya establecido #}
+{% block titulo %} Animales {% endblock %}
+
+{% block cabecera %}
+  {# Agrega el contenido por defecto de la plantilla padre #}
+  {{ parent() }}
+  <h2>{{ title }}</h2>
+{% endblock %}
+
+{% block contenido %}
+  {#
+  <h1>{{ title }}</h1>
+  <h2>Tu nombre es: {{ nombre }}</h2>
+  <h3>Tus apellidos son: {{ apellidos }}</h3> #}
+
+  {# Crear variables en Twig #}
+  {% set perro = 'Pastor aleman' %}
+
+  <h4>{{ perro }}</h4>
+
+  {# Trabajar con arrays #}
+  {{ dump(animales) }}
+  {{ animales.0 }}
+
+  {# Trabajar con arrays asociativos #}
+  {{ dump(aves) }}
+  {{ aves.tipo ~ ' - ' ~ aves.raza }}
+
+  {# Condicional #}
+  {% if aves.tipo == 'palomo' %}
+    <h1>Cuidado un palomo volador</h1>
+  {% else %}
+    <h2>No hay palomos a la vista</h2>
+  {% endif %}
+
+  {# Bucle #}
+  {% if animales|length >= 1 %}
+    <ul>
+      {% for animal in animales %}
+        <li>{{ animal }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+
+  {% for i in 0..10 %}
+    {{ i }}
+  {% endfor %}
+
+  {% if aves.color starts with 'gr' %}
+    <h1>Empieza por gr</h1>
+  {% endif %}
+
+  {% if aves.color ends with 's' %}
+    <h1>Termina en s</h1>
+  {% endif %}
+
+  <hr>
+  {# Retorna el contenido renderizado de un template #}
+  {{ include('partials/_funciones.html.twig', {nombre:'Juan Camilo Muñoz'}) }}
+
+{% endblock %}
